@@ -6,7 +6,7 @@ module Blueprinter
   #
   class Extension
     #
-    # Called eary during "render", this method receives the object to be rendered and
+    # Called early during "render", this method receives the object to be rendered and
     # may return a modified (or new) object to be rendered.
     #
     # @param object [Object] The object to be rendered
