@@ -102,19 +102,13 @@ module Blueprinter
 
     def prepare_data(object, view_name, local_options)
       if array_like?(object)
+        object = object.force if lazy_array_like?(object)
+
         object.map do |obj|
-          object_to_hash(
-            obj,
-            view_name: view_name,
-            local_options: local_options
-          )
+          object_to_hash(obj, view_name: view_name, local_options: local_options)
         end
       else
-        object_to_hash(
-          object,
-          view_name: view_name,
-          local_options: local_options
-        )
+        object_to_hash(object, view_name: view_name, local_options: local_options)
       end
     end
 

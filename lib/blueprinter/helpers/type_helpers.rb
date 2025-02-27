@@ -9,5 +9,9 @@ module Blueprinter
         object.is_a?(klass)
       end
     end
+
+    def lazy_array_like?(object)
+      array_like?(object) && object.is_a?(Enumerator::Lazy)
+    end
   end
 end
